@@ -1,0 +1,50 @@
+.navbar{
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #77AD78;
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo, .logoImg{
+    width: 230px;
+    height: 65px;
+}
+
+.logoImg{
+    filter: invert(1);
+}
+
+.links{
+    margin-left: 18%;
+    margin-right: 22%;
+}
+
+.linksList{
+    padding: 0;
+}
+
+.link{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sesionBtn{
+    border-radius: 30px;
+    background-color: transparent;
+    font-size: 16px;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+    width: 180px;
+    height: 50px;
+    border-style: solid;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
