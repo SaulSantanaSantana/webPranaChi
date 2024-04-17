@@ -195,3 +195,12 @@
         border-bottom: 1px solid #444;
       }
 }
+
+.link:hover{
+  font-weight: 900;  
+}
+
+.sesionBtn:hover{
+  font-weight: 900;
+  border-width: 4px;  
+}
