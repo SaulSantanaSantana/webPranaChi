@@ -1,0 +1,41 @@
+.logoText{
+    font-family: Inter;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin:0;
+    align-self: center;
+    justify-self: center;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0D1E2F;;
+    height: 12vh;
+    margin-bottom: 0;
+    color: white;
+}
+
+h2{
+    font-size: 18px;
+}
+.footerLeft{
+    margin-left: 5vh;
+}
+
+.footerRight{
+    margin-right: 5vh;
+}
+
+@media only screen and (max-width: 880px) {
+    h2{
+        font-size: 14px;
+    }
+
+    .logoText{
+        font-size: 14px;
+    }
+}
