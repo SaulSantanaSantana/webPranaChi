@@ -1,0 +1,32 @@
+.section3{
+    height: 100vh;
+    width: 100%;
+    background-color: #0D1E2F;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section2{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h5{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+b{
+    color: #2B4256;
+}
+
+.title{
+    font-weight: 400;
+}
