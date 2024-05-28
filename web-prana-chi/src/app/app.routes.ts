@@ -4,7 +4,7 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { ConocenosComponent } from './conocenos/conocenos.component';
 
 export const routes = [
-    {path: '', component: LandingComponent},
+    {path: '**', component: LandingComponent},
     {path: 'actividades', component: ActividadesComponent},
     {path: 'conocenos', component: ConocenosComponent}
 ];

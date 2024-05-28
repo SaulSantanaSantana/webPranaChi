@@ -5,7 +5,6 @@ import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
 @Component({
   selector: 'app-map',
-  standalone: true,
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
