@@ -9,7 +9,8 @@
   
   .map-frame {
     border: none;
-    height: 100%;
+    height: 80%;
+    width: 80px;
   }
   
   #map {
