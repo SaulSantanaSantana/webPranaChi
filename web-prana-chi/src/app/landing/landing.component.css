@@ -108,7 +108,7 @@ b{
     margin-top: 40px;
     margin-left: 25px;
     border-width: 2px;
-    height: 60vh;
+    height: 50vh;
     width: 20vw;
 
     display: flex;
@@ -121,7 +121,7 @@ b{
 }
 
 .cardName{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .mapimg{

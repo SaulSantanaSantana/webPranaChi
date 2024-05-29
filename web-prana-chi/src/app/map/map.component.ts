@@ -1,15 +1,15 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Geolocation } from '@capacitor/geolocation'
 import * as L from 'leaflet'
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
 @Component({
   selector: 'app-map',
+  standalone: true,
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
 
-export class MapComponent  implements AfterViewInit {
+export class MapComponent implements AfterViewInit {
 
   private map:L.Map | undefined;
   private markerLayer: L.LayerGroup| undefined
@@ -19,24 +19,14 @@ export class MapComponent  implements AfterViewInit {
     this.provider = new OpenStreetMapProvider();
   }
 
-
   async ngAfterViewInit(): Promise<void> {
     await this.initMap()    
   }
 
   async initMap(){
 
-    let location
-
-    try {
-      await Geolocation.requestPermissions();
-      location = await Geolocation.getCurrentPosition({enableHighAccuracy:true})
-    } catch (error) {
-      location = await Geolocation.getCurrentPosition()
-    }
-
     this.map = L.map('map',{
-      center:[location.coords.latitude,location.coords.longitude],
+      center:[0,0,0],
       zoom: 18,
       zoomControl: false
     })
