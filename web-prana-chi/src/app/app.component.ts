@@ -4,17 +4,22 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { ActividadesComponent } from './actividades/actividades.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, 
+  imports: [RouterModule,
+    RouterOutlet, 
     NavbarComponent, 
     LandingComponent, 
     FooterComponent, 
     ActividadesComponent,
     RouterLink, 
-    RouterLinkActive],
+    RouterLinkActive,
+    CommonModule,
+    RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
