@@ -1,0 +1,48 @@
+.section1{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.Horairos{
+    height: 80vh;
+    width: auto;
+}
+
+.section3{
+    height: 100vh;
+    width: 100%;
+    background-color: #0D1E2F;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.text{
+    font-size: 20px;
+}
+
+.judoImg2{
+    height: 70vh;
+}
+
+.descripcion2{
+    margin-right: 5vw;
+    margin-left: 5vw;
+    width: 55vw;
+}
