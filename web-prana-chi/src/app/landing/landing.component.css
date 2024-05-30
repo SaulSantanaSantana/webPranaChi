@@ -1,6 +1,6 @@
 .h-80{
     /*height: 90vh;*/
-    height: 80vh;
+    height: 85vh;
     opacity: 60%;
 }
 
@@ -9,7 +9,7 @@
 }
 
 h1{
-    font-size: 70px;
+    font-size: 65px;
     font-weight: bold;
 }
 
@@ -28,7 +28,7 @@ p{
 
 .title{
     font-weight: 400;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 b{
