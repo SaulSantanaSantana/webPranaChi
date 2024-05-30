@@ -26,17 +26,26 @@ export class MapComponent implements AfterViewInit {
   async initMap(){
 
     this.map = L.map('map',{
-      center:[0,0,0],
-      zoom: 18,
-      zoomControl: false
+      center: [28.104435, -15.431867],
+      zoom: 15,
+      zoomControl: true
     })
 
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      maxZoom:20,
-      minZoom:3
+      maxZoom: 20,
+      minZoom: 10,
     })
 
     tiles.addTo(this.map)
+
+    var customIcon = L.icon({
+      iconUrl: "../assets/marker.webp",
+  
+      iconSize:     [60, 60],
+      iconAnchor:   [22, 94]
+  });
+
+  L.marker([28.104435, -15.431867], {icon: customIcon}).addTo(this.map);
 
     this.map.on('moveend', async () => {
       const center = this.map?.getCenter();
