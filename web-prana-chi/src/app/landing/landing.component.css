@@ -8,9 +8,13 @@
     background-color: black;
 }
 
-h5{
-    font-size: 40px;
+h1{
+    font-size: 85px;
     font-weight: bold;
+}
+
+p{
+    font-size: 30px;
 }
 
 .section2{
@@ -24,6 +28,7 @@ h5{
 
 .title{
     font-weight: 400;
+    font-size: 80px;
 }
 
 b{
@@ -65,11 +70,11 @@ b{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .map{
-    width: 60vh;
+    width: 80vh;
     height: 70vh;
 }
 
@@ -89,7 +94,6 @@ b{
 
 .infoDesc{
     margin-left: 12vh;
-    margin-bottom: 8vh;
     font-size: 20px;
     font-weight: 400;
 }
@@ -123,11 +127,24 @@ b{
 }
 
 .cardText{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .cardName{
-    font-size: 20px;
+    font-size: 16px;
+}
+
+.cardTittle{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.cardImg{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
 }
 
 .mapimg{
