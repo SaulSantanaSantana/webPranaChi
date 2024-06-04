@@ -19,7 +19,9 @@ import { RouterModule } from '@angular/router';
     RouterLink, 
     RouterLinkActive,
     CommonModule,
-    RouterModule],
+    RouterModule
+  ],
+  providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
