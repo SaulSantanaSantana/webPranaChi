@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     RouterLink, 
     RouterLinkActive,
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   templateUrl: './app.component.html',

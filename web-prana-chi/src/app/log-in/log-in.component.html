@@ -1,5 +1,5 @@
 <button type="button" class="sesionBtn" data-bs-toggle="modal" data-bs-target="#loginModal">
-    Iniciar Sesión
+    Área personal
 </button>  
 
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -10,16 +10,67 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <label for="mail">Correo Electrónico:</label>
-          <input type="email" id="mail" name="email" required minlength="4" maxlength="30"/>
-          <br>
-          <label for="password">Contraseña:</label>
-          <input type="password" id="password" name="password" required minlength="4" maxlength="30"/>
+          <div class="section">
+            <div class="container">
+              <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                  <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                      <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                      <label for="reg-log"></label>
+                    <div class="card-3d-wrap mx-auto">
+                      <div class="card-3d-wrapper">
+                        <div class="card-front">
+                          <div class="center-wrap">
+                            <div class="section text-center">
+                              <h4 class="mb-4 pb-3">Iniciar Sesión</h4>
+                              <div class="form-group">
+                                <input type="email" name="logemail" class="form-style" placeholder="Correo electrónico" [(ngModel)]="email" id="logemail" >
+                                <i class="input-icon uil uil-at"></i>
+                              </div>	
+                              <div class="form-group mt-2">
+                                <input type="password" name="logpass" class="form-style" placeholder="Contraseña" [(ngModel)]="pass" id="logpass">
+                                <i class="input-icon uil uil-lock-alt"></i>
+                              </div>
+                              <a href="#" class="btn mt-4">Acceder</a>
+                                  <p class="mb-0 mt-4 text-center"><a href="#0" class="link">¿Contraseña olvidada?</a></p>
+                                </div>
+                              </div>
+                            </div>
+                        <div class="card-back">
+                          <div class="center-wrap">
+                            <div class="section text-center">
+                              <h4 class="mb-4 pb-3">Registrarse</h4>
+                              <div class="form-group">
+                                <input type="text" name="logname" class="form-style" placeholder="Nombre Completo" [(ngModel)]="regName" id="regname">
+                                <i class="input-icon uil uil-user"></i>
+                              </div>	
+                              <div class="form-group mt-2">
+                                <input type="email" name="regemail" class="form-style" placeholder="Correo Electrónico" [(ngModel)]="regMail" id="regemail">
+                                <i class="input-icon uil uil-at"></i>
+                              </div>	
+                              <div class="form-group mt-2">
+                                <input type="password" name="regpass" class="form-style" placeholder="Contraseña" [(ngModel)]="regPass" id="regpass">
+                                <i class="input-icon uil uil-lock-alt"></i>
+                              </div>
+                              <div class="form-group mt-2">
+                                <input type="password" name="regpass2" class="form-style" placeholder="Repetir Contraseña" [(ngModel)]="regPass2" id="regpass2">
+                                <i class="input-icon uil uil-lock-alt"></i>
+                              </div>
+                              <a href="#" class="btn mt-4">Registrarme</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
           <button googleSso type="button" class="btn btn-primary" style="background-color: cornflowerblue;">Acceder con google</button>
-          <button type="button" class="btn btn-primary">Iniciar Sesión</button>
         </div>
       </div>
     </div>
