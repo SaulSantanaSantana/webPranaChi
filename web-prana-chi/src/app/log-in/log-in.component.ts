@@ -24,14 +24,14 @@ export class LogInComponent {
 
   logIn(){
     if(this.email == ""){
-
+      alert("Complete todos los campos")
     }else if(this.pass == ""){
-
+      alert("Complete todos los campos")
     }else{
       try{
         this.authService.login(this.email, this.pass)
       }catch{
-
+        alert("Credenciales incorrectos")
       }
     }
   }
@@ -39,18 +39,18 @@ export class LogInComponent {
   register() {
 
     if(this.regName == ""){
-
+      alert("Complete todos los campos")
     }else if(this.regMail == ""){
-
+      alert("Complete todos los campos")
     }else if(this.regPass == ""){
-
+      alert("Complete todos los campos")
     }else if(this.regPass != this.regPass2){
-
+      alert("Las contraseñas no coinciden")
     }else{
       try{
         this.authService.signUp(this.email,this.pass)
       }catch{
-
+        alert("Ha ocurrido un error en el registro")
       }
     }
 

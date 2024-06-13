@@ -31,7 +31,7 @@
                                 <input type="password" name="logpass" class="form-style" placeholder="Contraseña" [(ngModel)]="pass" id="logpass">
                                 <i class="input-icon uil uil-lock-alt"></i>
                               </div>
-                              <a href="#" class="btn mt-4">Acceder</a>
+                              <a href="#" class="btn mt-4" (click)="logIn()">Acceder</a>
                                   <p class="mb-0 mt-4 text-center"><a href="#0" class="link">¿Contraseña olvidada?</a></p>
                                 </div>
                               </div>
@@ -56,7 +56,7 @@
                                 <input type="password" name="regpass2" class="form-style" placeholder="Repetir Contraseña" [(ngModel)]="regPass2" id="regpass2">
                                 <i class="input-icon uil uil-lock-alt"></i>
                               </div>
-                              <a href="#" class="btn mt-4">Registrarme</a>
+                              <a href="#" class="btn mt-4" (click)="register()">Registrarme</a>
                                 </div>
                               </div>
                             </div>
