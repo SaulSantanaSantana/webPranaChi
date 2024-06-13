@@ -7,6 +7,7 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     RouterLinkActive,
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   templateUrl: './app.component.html',
