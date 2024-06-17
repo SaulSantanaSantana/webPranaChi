@@ -1,0 +1,31 @@
+.documents{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+
+    justify-content: center;
+    width: 90vw;
+    height: 67vh;
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.link{
+    margin-left: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+}
