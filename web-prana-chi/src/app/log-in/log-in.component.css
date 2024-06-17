@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+.hide{
+  font-weight: 500;
+}
+
 .sesionBtn{
     border-radius: 10px;
     background-color: transparent;
@@ -77,7 +81,7 @@ h6 span{
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color: #2B4256;
+  background-color: #39658b;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before{
@@ -101,7 +105,6 @@ h6 span{
 .checkbox:checked + label:before {
   transform: translateX(44px) rotate(-270deg);
 }
-
 
 .card-3d-wrap {
   position: relative;

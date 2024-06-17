@@ -12,6 +12,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class LogInComponent {
 
+  text: string[] = ["¿No tienes cuenta?", "¿Tienes Cuenta?"];
+  textShowing: string = "¿No tienes cuenta?";
+  index: number = 0;
+
   email: string = "";
   pass: string = "";
 
@@ -55,4 +59,15 @@ export class LogInComponent {
     }
 
   }
+
+  changeText(){
+    if(this.index == 0){
+      this.index = 1
+      this.textShowing = this.text[1]
+    }else{
+      this.index = 0
+      this.textShowing = this.text[0]
+    }
+  }
+
 }
