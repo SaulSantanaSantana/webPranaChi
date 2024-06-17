@@ -3,10 +3,22 @@
         <img src="../../assets/payment.png" class="icon">
         <h1>Pagos</h1>
     </div>
+    <div class="adminview">
+      <div class="filters">
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Pagado">
+      </div>
+      <div class="profile--subtitle">
+        <label for="profileName">Añadir Pago</label>
+        <button class="actionbtn">+</button>
+    </div>
+    </div>
+    <hr>
     <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">Fecha</th>
+            <th scope="col">Cliene</th>
             <th scope="col">Asunto</th>
             <th scope="col">Borrar</th>
             <th scope="col">Pagado</th>
@@ -16,8 +28,9 @@
           <tr>
             <th scope="row">1</th>
             <td>Mark</td>
+            <td>Julio</td>
             <td><img src="../../assets/delete.png" class="icon"></td>
-            <td><button> </button></td>
+            <td><button class="checkBrn"> </button></td>
           </tr>
         </tbody>
       </table>
