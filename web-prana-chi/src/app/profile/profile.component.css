@@ -1,0 +1,84 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 5vw;
+    width: 100vw;
+    height: 67vh;
+    margin-top: 10vh;
+}
+
+.profile--user{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile--profiles{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.actionbtn{
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2B4256;
+    color: white;
+    margin-left: 10px;
+    font-size: small;
+}
+
+.profile--subtitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.saveChanges{
+    width: 180px;
+    height: 50px;
+    border: none;
+    background-color: #2B4256;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.saveChanges:hover{
+    background-color: #457baa;
+}
+
+.addProfile{
+    align-self: flex-end;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+label{
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+input{
+    margin-bottom: 15px;
+    height: 35px;
+    width: 300px;
+}
