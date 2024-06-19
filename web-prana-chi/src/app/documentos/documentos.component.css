@@ -40,12 +40,16 @@
 }
 
 .actionbtn{
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
     border-radius: 50px;
     border: none;
     background-color: #2B4256;
     color: white;
     margin-left: 10px;
     font-size: small;
+}
+
+.profile--subtitle{
+    font-size: 22px;
 }
