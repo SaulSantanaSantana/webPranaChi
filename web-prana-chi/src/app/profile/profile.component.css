@@ -66,6 +66,13 @@
     background-color: #457baa;
 }
 
+.profile--title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .addProfile{
     align-self: flex-end;
     margin-right: 5px;
