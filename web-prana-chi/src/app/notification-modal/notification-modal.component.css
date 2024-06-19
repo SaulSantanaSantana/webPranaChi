@@ -1,0 +1,15 @@
+.notificatioBtn{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: small;
+    padding: 0;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}

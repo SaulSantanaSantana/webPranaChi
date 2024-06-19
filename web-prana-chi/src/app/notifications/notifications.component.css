@@ -27,6 +27,7 @@
     background-color: transparent;
     width: 28px;
     height: 28px;
+    margin-right: 15px;
 }
 
 .adminview{
@@ -62,4 +63,15 @@ input{
     margin-left: 10px;
     font-size: small;
     margin-top: 20px;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inconBtn{
+    border: none;
+    background-color: transparent;
 }
