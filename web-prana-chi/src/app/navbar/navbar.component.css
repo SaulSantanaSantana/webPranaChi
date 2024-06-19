@@ -204,3 +204,7 @@
   font-weight: 900;
   border-width: 4px;  
 }
+
+.active{
+  font-weight: bold;
+}
