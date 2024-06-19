@@ -60,3 +60,20 @@
     margin-top: 50px;
     align-self: flex-end;
 }
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.inconBtn{
+    border: none;
+    background-color: transparent;
+}
+
+.checkBrn{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+}

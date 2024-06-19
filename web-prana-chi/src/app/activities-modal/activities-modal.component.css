@@ -1,0 +1,39 @@
+.notificatioBtn{
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: small;
+    padding: 0;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.members{
+
+    align-self: flex-start;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.adduser{
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

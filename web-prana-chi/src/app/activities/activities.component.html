@@ -16,8 +16,7 @@
             <th scope="col">Horario</th>
             <th scope="col">Lugar</th>
             <th scope="col">Monitor</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Borrar</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -26,10 +25,15 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>aaa</td>
-            <td><img src="../../assets/lapiz.png" class="icon"></td>
-            <td><img src="../../assets/delete.png" class="icon"></td>
+            <td >
+              <div class="actions">
+              <button class="checkBrn"> </button>
+              <button class="inconBtn"><app-activities-modal></app-activities-modal></button>
+              <button class="inconBtn"><img src="../../assets/delete.png" class="icon"></button>
+            </div>
+            </td>
           </tr>
         </tbody>
       </table>
-      <button class="saveChanges">Descagar Horaios</button>
+      <button class="saveChanges">Descagar Horarios</button>
 </section>
