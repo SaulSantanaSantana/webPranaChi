@@ -7,25 +7,25 @@ import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private afAuth: Auth) { }
+  constructor(private afAuth: AngularFireAuth) { }
 
   signUp(email: string, password: string) {
-    createUserWithEmailAndPassword(this.afAuth, email, password)
+    console.log(email)
+    console.log(password)
+    this.afAuth.createUserWithEmailAndPassword(email,password)
       .then(() => {
-        console.log("Oleeee")
       })
       .catch((error) => {
-        console.log(error)
+        alert(error)
       });
   }
 
   login(email: string, password: string) {
-    signInWithEmailAndPassword(this.afAuth,email, password)
+    this.afAuth.signInWithEmailAndPassword(email, password)
       .then(() => {
-        console.log("Oleeee")
       })
       .catch((error) => {
-        console.log(error)
+        alert(error)
       });
   }
 

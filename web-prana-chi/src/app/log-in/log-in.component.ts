@@ -41,17 +41,17 @@ export class LogInComponent {
 
   register() {
 
-    if(this.regName == ""){
+    if(this.regName === ""){
       alert("Complete todos los campos")
-    }else if(this.regMail == ""){
+    }else if(this.regMail === ""){
       alert("Complete todos los campos")
-    }else if(this.regPass == ""){
+    }else if(this.regPass.length >= 6){
       alert("Complete todos los campos")
     }else if(this.regPass != this.regPass2){
       alert("Las contraseñas no coinciden")
     }else{
       try{
-        this.authService.signUp(this.email,this.pass)
+        this.authService.signUp(this.regMail ,this.regPass)
       }catch{
         alert("Ha ocurrido un error en el registro")
       }
