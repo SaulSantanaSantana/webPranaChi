@@ -9,19 +9,20 @@
             <a class="link" routerLink="/Conocenos" routerLinkActive="active">Conocenos</a>
         </ul>
     </div>
-    <div class="sesion">
-        <app-log-in></app-log-in>
-    </div>
-    <div class="burger">
-        <input id="menu-toggle" type="checkbox" />
-        <label class='menu-button-container' for="menu-toggle">
-            <div class='menu-button'></div>
-        </label>
-        <ul class="menu">
-            <li>Actividades</li>
-            <li>Contactanos</li>
-            <li>Conocenos</li>
-            <li><app-log-in style="z-index: 99;"></app-log-in></li>
-        </ul>
+    <div class="navbarButtonsWrapper">
+        <div class="personalAcces">
+            <app-log-in></app-log-in>
+        </div>
+        <div class="burger">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
+            <ul class="menu">
+                <li>Actividades</li>
+                <li>Contactanos</li>
+                <li>Conocenos</li>
+            </ul>
+        </div>
     </div>
 </div>

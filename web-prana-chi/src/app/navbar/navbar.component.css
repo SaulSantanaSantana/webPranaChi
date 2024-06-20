@@ -208,3 +208,9 @@
 .active{
   font-weight: bold;
 }
+
+.navbarButtonsWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw
+}
