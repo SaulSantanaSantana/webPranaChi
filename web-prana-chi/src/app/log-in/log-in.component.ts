@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-log-in',
   standalone: true,
@@ -23,7 +23,7 @@ export class LogInComponent {
   regPass2: string = "";
   regName: string = "";
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   logIn(){
     if(this.email == ""){
@@ -39,19 +39,20 @@ export class LogInComponent {
     }
   }
 
-  register() {
+  async register() {
 
     if(this.regName === ""){
       alert("Complete todos los campos")
     }else if(this.regMail === ""){
       alert("Complete todos los campos")
-    }else if(this.regPass.length >= 6){
+    }else if(this.regPass.length < 6){
       alert("Complete todos los campos")
     }else if(this.regPass != this.regPass2){
       alert("Las contraseñas no coinciden")
     }else{
       try{
-        this.authService.signUp(this.regMail ,this.regPass)
+        await this.authService.signUp(this.regMail ,this.regPass, this.regName)
+        this.router.navigate(['perfil'])
       }catch{
         alert("Ha ocurrido un error en el registro")
       }

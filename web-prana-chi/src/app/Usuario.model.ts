@@ -3,4 +3,5 @@ export class Usuario {
     Nombre?: string;
     Correo?: string;
     Datos?: string;
+    perfiles?: string[];
 }

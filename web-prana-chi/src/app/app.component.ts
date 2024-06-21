@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { NavbarSecondaryComponent } from './navbar-secondary/navbar-secondary.component';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +24,6 @@ import { NavbarSecondaryComponent } from './navbar-secondary/navbar-secondary.co
     RouterModule,
     FormsModule,
     AngularFirestoreModule,
-    NavbarSecondaryComponent
   ],
   providers: [],
   templateUrl: './app.component.html',
