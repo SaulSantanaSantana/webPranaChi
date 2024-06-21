@@ -25,14 +25,15 @@ export class LogInComponent {
 
   constructor(public authService: AuthService, private router: Router) {}
 
-  logIn(){
+  async logIn(){
     if(this.email == ""){
       alert("Complete todos los campos")
     }else if(this.pass == ""){
       alert("Complete todos los campos")
     }else{
       try{
-        this.authService.login(this.email, this.pass)
+        await this.authService.login(this.email, this.pass)
+        this.router.navigate(['/perfil', '']);
       }catch{
         alert("Credenciales incorrectos")
       }
@@ -52,7 +53,7 @@ export class LogInComponent {
     }else{
       try{
         await this.authService.signUp(this.regMail ,this.regPass, this.regName)
-        this.router.navigate(['perfil'])
+        this.router.navigate(['/', 'perfil'])
       }catch{
         alert("Ha ocurrido un error en el registro")
       }
