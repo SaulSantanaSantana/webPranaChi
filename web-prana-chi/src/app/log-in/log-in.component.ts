@@ -33,7 +33,7 @@ export class LogInComponent {
     }else{
       try{
         await this.authService.login(this.email, this.pass)
-        this.router.navigate(['/perfil', '']);
+        this.router.navigate(['/perfil']);
       }catch{
         alert("Credenciales incorrectos")
       }
@@ -53,12 +53,16 @@ export class LogInComponent {
     }else{
       try{
         await this.authService.signUp(this.regMail ,this.regPass, this.regName)
-        this.router.navigate(['/', 'perfil'])
+        this.router.navigate(['/perfil']);
       }catch{
         alert("Ha ocurrido un error en el registro")
       }
     }
 
+  }
+
+  navigatetoProfile(){
+    this.router.navigate(['/perfil']);
   }
 
   changeText(){
