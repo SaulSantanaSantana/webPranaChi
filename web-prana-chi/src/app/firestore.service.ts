@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireStorage } from "@angular/fire/compat/storage";
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Usuario } from './Usuario.model';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +18,14 @@ export class UserService {
     this.usersRef = db.collection(this.dbPath);
   }
 
-  async createUser(nombre: string, mail: string): Promise<any> {
-    let uidUsuairo = this.db.createId();
-    const docRef = this.db.collection(this.dbPath).doc(uidUsuairo);
+  async createUser(nombre: string, mail: string, uid:string): Promise<any> {
+    const docRef = this.db.collection(this.dbPath).doc(uid);
 
     let usuario = new Usuario;
     usuario.Nombre = nombre;
     usuario.Correo = mail;
-    usuario.id = uidUsuairo;
+    usuario.id = uid;
+    usuario.Telefono = "";
     usuario.Datos = "";
     usuario.perfiles = [nombre.split(" ")[0]]
     
@@ -32,6 +34,10 @@ export class UserService {
     await docRef.set( usuarioData, { merge: true }).then(() => {
       alert("Cuenta creada con éxito")
     });
+  }
+
+  getUser(id: string): Observable<any> {
+    return this.db.collection(this.dbPath).doc(id).valueChanges();
   }
 
   getAll(): AngularFirestoreCollection<Usuario> {

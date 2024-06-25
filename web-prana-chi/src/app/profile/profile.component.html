@@ -6,27 +6,31 @@
             <h1>Cuenta</h1>
         </div>
         <label for="profileName">Nombre Completo</label>
-        <input type="text" id="profileName">
+        <input type="text" id="profileName" [(ngModel)]="this.userActual.Nombre" >
         <label for="profileMail">Correo Electrónico</label>
-        <input type="text" id="profileMail">
+        <input type="text" id="profileMail" [(ngModel)]="this.userActual.Correo">
         <label for="profilePhone">Teléfono</label>
-        <input type="text" id="profilePhone">
+        <input type="text" id="profilePhone" [(ngModel)]="this.userActual.Telefono">
         <label for="profileData">Datos Adicionales</label>
-        <input type="text" style="height: 100px;" id="profileData">
+        <input type="text" style="height: 100px;" id="profileData" [(ngModel)]="this.userActual.Datos">
     </section>
     <section class="profile--profiles">
         <div class="title" >
             <img src="../../assets/profiles.png" class="icon">
             <h1>Perfiles de Usuario</h1>
         </div>
-        <div class="profile--title">
-            <label for="profileName">Nombre</label>
-            <div class="profile--subtitle">
-                <label for="profileName">Quitar Perfil</label>
-                <button class="actionbtn">-</button>
+        @for (perfil of this.userActual.perfiles; track $index) {
+            <div class="profile--title">
+                <label for="profileName">Nombre</label>
+                <div class="profile--subtitle">
+                    @if ($index > 0) {
+                        <label for="profileName">Quitar Perfil</label>
+                        <button class="actionbtn">-</button>
+                    }
+                </div>
             </div>
-        </div>
-        <input type="text">
+            <input type="text" [(ngModel)]="this.userActual.Nombre">
+        }
         <div class="profile--subtitle addProfile">
             <label for="profileName">Añadir Perfil</label>
             <button class="actionbtn">+</button>

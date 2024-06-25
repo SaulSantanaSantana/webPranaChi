@@ -3,6 +3,7 @@ export class Usuario {
     admin?: boolean = false;
     Nombre?: string;
     Correo?: string;
+    Telefono?: string;
     Datos?: string;
     perfiles?: string[];
 }

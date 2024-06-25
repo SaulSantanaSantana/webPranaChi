@@ -25,22 +25,21 @@ export class LogInComponent {
 
   constructor(public authService: AuthService, private router: Router) {}
 
-  async logIn(){
+  logIn(){
     if(this.email == ""){
       alert("Complete todos los campos")
     }else if(this.pass == ""){
       alert("Complete todos los campos")
     }else{
       try{
-        await this.authService.login(this.email, this.pass)
-        this.router.navigate(['/perfil']);
+        this.authService.login(this.email, this.pass)
       }catch{
         alert("Credenciales incorrectos")
       }
     }
   }
 
-  async register() {
+  register() {
 
     if(this.regName === ""){
       alert("Complete todos los campos")
@@ -52,8 +51,7 @@ export class LogInComponent {
       alert("Las contraseñas no coinciden")
     }else{
       try{
-        await this.authService.signUp(this.regMail ,this.regPass, this.regName)
-        this.router.navigate(['/perfil']);
+        this.authService.signUp(this.regMail ,this.regPass, this.regName)
       }catch{
         alert("Ha ocurrido un error en el registro")
       }
