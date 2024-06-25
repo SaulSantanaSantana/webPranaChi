@@ -33,6 +33,7 @@ export class LogInComponent {
     }else{
       try{
         this.authService.login(this.email, this.pass)
+        this.activemoda
       }catch{
         alert("Credenciales incorrectos")
       }

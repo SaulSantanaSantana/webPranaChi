@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-navbar-secondary',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './navbar-secondary.component.html',
   styleUrl: './navbar-secondary.component.css'
 })
