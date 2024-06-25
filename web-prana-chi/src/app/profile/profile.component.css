@@ -34,21 +34,11 @@
     margin-right: 10px;
 }
 
-.actionbtn{
-    width: 22px;
-    height: 22px;
-    border-radius: 50px;
-    border: none;
-    background-color: #2B4256;
-    color: white;
-    margin-left: 10px;
-    font-size: small;
-}
-
 .profile--subtitle{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: end;
 }
 
 .saveChanges{
@@ -71,6 +61,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.actionbtn{
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2B4256;
+    color: white;
+    margin-left: 10px;
+    font-size: small;
+}
+
+.deleteProfile{
+    font-size: 16px;
 }
 
 .addProfile{

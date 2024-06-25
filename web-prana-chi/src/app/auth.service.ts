@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { UserService } from './firestore.service';
-import { Usuario } from './Usuario.model';
 import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
@@ -38,9 +37,13 @@ export class AuthService {
 
   
   logOut() {
-    this.afAuth.signOut().then(() => 
-      alert("Sesión Cerrada")
-    );
+    this.afAuth.signOut()
+    .then(() => {
+      this.router.navigate(['/'])
+    })
+    .catch((error) => {
+      alert(error)
+    });
   }
 
 }

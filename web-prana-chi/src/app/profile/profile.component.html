@@ -21,19 +21,18 @@
         </div>
         @for (perfil of this.userActual.perfiles; track perfil; let first = $first; let index = $index){
             <div class="profile--title">
-                <label for="profileName">Nombre</label>
+                <label for="profileName">Nombre de perfil</label>
                 <div class="profile--subtitle">
                     @if (!first) {
-                        <label for="profileName">Quitar Perfil</label>
-                        <button class="actionbtn">-</button>
+                        <label for="profileName" class="deleteProfile">Quitar Perfil</label>
+                        <button class="actionbtn" (click)="removeProfile(index)">-</button>
                     }
                 </div>
             </div>
-            <input type="text"  [ngModel] = "perfil">
+            <input type="text"  [ngModel] = "perfil" disabled>
         }
-        <div class="profile--subtitle addProfile">
-            <label for="profileName">Añadir Perfil</label>
-            <button class="actionbtn">+</button>
+        <div class="profile--subtitle">
+            <app-add-profile (profileEmiter)="receiveMessage($event)"></app-add-profile>
         </div>
     </section>
     <button class="saveChanges">Guardar Cambios</button>

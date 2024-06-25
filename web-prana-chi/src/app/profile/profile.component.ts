@@ -5,11 +5,12 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Usuario } from '../Usuario.model';
 import { UserService } from '../firestore.service';
 import { FormsModule } from '@angular/forms';
+import { AddProfileComponent } from '../add-profile/add-profile.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [NavbarSecondaryComponent, FormsModule],
+  imports: [NavbarSecondaryComponent, FormsModule, AddProfileComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -48,4 +49,13 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  receiveMessage(name: string) {
+    this.userActual.perfiles?.push(name)
+  }
+
+  removeProfile(index: number){
+    if (index > -1) {
+      this.userActual.perfiles?.splice(index, 1);
+    }
+  }
 }
