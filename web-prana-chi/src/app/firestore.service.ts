@@ -40,6 +40,11 @@ export class UserService {
     return this.db.collection(this.dbPath).doc(id).valueChanges();
   }
 
+  updateUser(id: string, data: Usuario): Promise<void> {
+    const usuarioData = { ...data }; 
+    return this.db.collection(this.dbPath).doc(id).update(usuarioData);
+  }
+
   getAll(): AngularFirestoreCollection<Usuario> {
     return this.usersRef;
   }

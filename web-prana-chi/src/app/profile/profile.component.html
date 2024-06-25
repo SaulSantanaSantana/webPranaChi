@@ -12,7 +12,7 @@
         <label for="profilePhone">Teléfono</label>
         <input type="text" id="profilePhone" [(ngModel)]="this.userActual.Telefono">
         <label for="profileData">Datos Adicionales</label>
-        <input type="text" style="height: 100px;" id="profileData" [(ngModel)]="this.userActual.Datos">
+        <textarea type="text" style="height: 100px; resize: none;" id="profileData" [(ngModel)]="this.userActual.Datos"></textarea>
     </section>
     <section class="profile--profiles">
         <div class="title" >
@@ -35,5 +35,5 @@
             <app-add-profile (profileEmiter)="receiveMessage($event)"></app-add-profile>
         </div>
     </section>
-    <button class="saveChanges">Guardar Cambios</button>
+    <button class="saveChanges" (click)="updateData()">Guardar Cambios</button>
 </section>

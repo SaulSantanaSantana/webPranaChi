@@ -53,6 +53,15 @@ export class ProfileComponent implements OnInit {
     this.userActual.perfiles?.push(name)
   }
 
+  updateData(){
+    this.afs.updateUser(this.uid, this.userActual).then(() => {
+      alert("Guardado con exito")
+    })
+    .catch((error) => {
+      alert(error)
+    });
+  }
+
   removeProfile(index: number){
     if (index > -1) {
       this.userActual.perfiles?.splice(index, 1);
