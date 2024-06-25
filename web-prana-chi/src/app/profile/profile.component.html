@@ -19,17 +19,17 @@
             <img src="../../assets/profiles.png" class="icon">
             <h1>Perfiles de Usuario</h1>
         </div>
-        @for (perfil of this.userActual.perfiles; track $index) {
+        @for (perfil of this.userActual.perfiles; track perfil; let first = $first; let index = $index){
             <div class="profile--title">
                 <label for="profileName">Nombre</label>
                 <div class="profile--subtitle">
-                    @if ($index > 0) {
+                    @if (!first) {
                         <label for="profileName">Quitar Perfil</label>
                         <button class="actionbtn">-</button>
                     }
                 </div>
             </div>
-            <input type="text" [(ngModel)]="this.userActual.Nombre">
+            <input type="text"  [ngModel] = "perfil">
         }
         <div class="profile--subtitle addProfile">
             <label for="profileName">Añadir Perfil</label>
