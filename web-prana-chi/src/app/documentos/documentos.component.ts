@@ -30,7 +30,6 @@ export class DocumentosComponent {
           if (document) {
             this.admin = document.admin;
           } else {
-            alert("Error al acceder a la informacion de usuario")
           }
         });
 

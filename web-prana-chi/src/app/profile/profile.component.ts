@@ -39,7 +39,6 @@ export class ProfileComponent implements OnInit {
           if (document) {
             this.userActual = document;
           } else {
-            alert("Error al acceder a la informacion de usuario")
           }
         });
       } else {
