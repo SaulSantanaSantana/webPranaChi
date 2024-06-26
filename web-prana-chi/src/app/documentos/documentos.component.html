@@ -6,11 +6,25 @@
             <h1>Documentos</h1>
         </div>
         <div class="profile--subtitle">
-            <label for="profileName">Añadir Documentos</label>
-            <button class="actionbtn">+</button>
+            @if (this.admin) {<app-upload-document></app-upload-document>}
         </div>
     </div>
     <ul>
-        <li  class="link"><a>qwdqwd</a></li>
+        @for (documento of documentos; track $index) {
+            @if(documento.Visible){
+                <div class="document">
+                    <li><a href={{documento.Url}} target="_blank">{{documento.Nombre}}</a></li>
+                    @if (this.admin) {<button class="btn btn-secondary" (click)="toggleVisibility(documento)"> Ocultar </button>}
+                </div> 
+            }
+
+            @if (documento.Visible == false && this.admin) {
+                <div class="document">
+                    <li><a href={{documento.Url}} target="_blank">{{documento.Nombre}}</a></li>
+                    <button class="btn btn-primary" (click)="toggleVisibility(documento)"> Publicar </button>
+                    <button class="btn btn-primary" (click)="deleteDocumento(documento)" style="background-color: red;"> Borrar </button>
+                </div> 
+            }
+        }
     </ul>
 </section>

@@ -53,3 +53,14 @@
 .profile--subtitle{
     font-size: 22px;
 }
+
+a{
+    font-size: 22px;
+}
+
+.document{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px
+}
