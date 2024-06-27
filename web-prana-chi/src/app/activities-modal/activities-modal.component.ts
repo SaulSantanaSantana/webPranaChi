@@ -36,7 +36,6 @@ export class ActivitiesModalComponent {
         usuario.id == this.usuariolSelecionado.split(": ")[1]
       );
     }
-    console.log(this.usuariolSelecionadoObj)
   }
 
   AddUser(){

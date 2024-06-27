@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <img src="../../assets/ver.png" alt="see icon" class="icon"> </button>
+<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-target="#notificationModal"> <img src="../../assets/ver.png" alt="see icon" class="icon"> </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,11 +10,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h1>Titulo</h1>
-          <h3>20/11/2001</h3>
-          <h5>Lorem ipsum solor</h5>
+          <h1>Notificación para: {{ notification.Usuario }}</h1>
+          <h3>{{ convertirTimestamp(notification.Fecha) }}</h3>
+          <h5>{{ notification.Mensaje }}</h5>
         </div>
         <div class="modal-footer">
+          <button class="btn btn-primary" [disabled]="!buttonEnable" (click)="toggleMarc()"> Marcar {{this.notification.Marcada ? "no leida" : "leida"}} </button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
