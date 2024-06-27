@@ -1,0 +1,28 @@
+
+
+  <div class="profile--subtitle addProfile">
+    <label for="profileName">Añadir Actividad</label>
+    <button  type="button" class="actionbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Crear actividad</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+          <input type="text" placeholder="Lugar" [(ngModel)]="lugar">
+          <input type="text" placeholder="Monitor" [(ngModel)]="monitor">
+          <input type="text" placeholder="Horarios, ej: L.9.10" [(ngModel)]="horarios">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="createActivity()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -4,5 +4,6 @@ export class Actividad {
     Horario?: string;
     Nombre?: string;
     Lugar?: string;
-    Usuarios?: string[];
+    Usuarios?: string[] = [];
+    Perfiles?: string[] = [];
 }

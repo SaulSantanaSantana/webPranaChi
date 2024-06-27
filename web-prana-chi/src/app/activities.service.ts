@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Actividad } from './Actividad.model';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable, firstValueFrom } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DocumentServiceService {
+export class ActivitiesService {
 
   private dbPath = 'Actividades';
 
@@ -22,7 +22,6 @@ export class DocumentServiceService {
     actividad.Horario = horarios;
     actividad.Lugar = lugar;
     actividad.Monitor = monitor;
-    actividad.Usuarios = [];
     actividad.id = id;
     
     const actividadData = { ...actividad }; 

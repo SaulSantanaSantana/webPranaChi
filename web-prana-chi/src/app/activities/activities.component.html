@@ -5,34 +5,40 @@
         <img src="../../assets/actividades.png" class="icon">
         <h1>Actividades</h1>
       </div>
-        <div class="profile--subtitle addProfile">
-          <label for="profileName">Añadir Actividad</label>
-          <button class="actionbtn">+</button>
-      </div>
+      @if (admin) {
+        <app-create-activity></app-create-activity>
+      }
+       
     </div>
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">Fecha</th>
+            <th scope="col">Nombre</th>
             <th scope="col">Horario</th>
             <th scope="col">Lugar</th>
             <th scope="col">Monitor</th>
-            <th scope="col">Acciones</th>
+            @if(admin){
+              <th scope="col">Acciones</th>
+            }
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>aaa</td>
-            <td >
-              <div class="actions">
-              <button class="inconBtn"><app-activities-modal></app-activities-modal></button>
-              <button class="inconBtn"><img src="../../assets/delete.png" class="icon"></button>
-            </div>
-            </td>
-          </tr>
+          @for (actividad of actividades; track $index) {
+            <tr>
+              <td>{{ actividad.Nombre }}</td>
+              <td>{{ actividad.Horario }}</td>
+              <td>{{ actividad.Lugar }}</td>
+              <td>{{ actividad.Monitor }}</td>
+              @if (admin) {
+                <td >
+                  <div class="actions">
+                  <button class="inconBtn"><app-activities-modal [actividad]="actividad" ></app-activities-modal></button>
+                  <button class="inconBtn"><img src="../../assets/delete.png" class="icon" (click)="deleteActivity(actividad)"></button>
+                </div>
+                </td>
+              } 
+            </tr>
+          }
         </tbody>
       </table>
       <button class="saveChanges">Descagar Horarios</button>

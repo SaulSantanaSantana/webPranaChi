@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"> <img src="../../assets/lapiz.png" alt="see icon" class="icon"> </button>
+<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-target="#detailsModal"> <img src="../../assets/lapiz.png" alt="see icon" class="icon"> </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,20 +10,39 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h1>Titulo</h1>
-          <h5>Lorem ipsum solor</h5>
-          <input type="text" placeholder="Añadir usuarios" class="adduser">
-          <button type="button" class="btn btn-primary adduser">Añadir</button>
+          <h1> {{ this.actividad.Nombre }} </h1>
+          <h5> {{ this.actividad.Monitor }} {{ this.actividad.Lugar }}, {{ this.actividad.Horario }} </h5>
+
+          <input list="usuarios" placeholder="Seleccione Usuario" class="adduser"  [(ngModel)]="usuariolSelecionado" (ngModelChange)="onChange()">
+          <datalist id="usuarios">
+            @for (usuario of usuarios; track $index) {
+              <option>{{usuario.Nombre}}: {{usuario.id}}</option>
+            }
+          </datalist>
+
+          <input list="perfiles" placeholder="Seleccione perfil" class="adduser" [(ngModel)]="perfilSelecionado">
+          <datalist id="perfiles">
+            @if(usuariolSelecionadoObj){
+              @for (perfil of usuariolSelecionadoObj.perfiles; track $index) {
+                <option>{{usuariolSelecionadoObj.Nombre}}: {{perfil}}</option>
+              }
+            } 
+          </datalist>
+
+          <button type="button" class="btn btn-primary adduser" (click)="AddUser()">Añadir</button>
           <div class="members">
-            <h2>Usuarios:</h2>
+            <h2 style="align-self: baseline;">Usuarios:</h2>
           <ul>
-            <li>Pago</li>
-            <li>Julio</li>
+            @for (perfil of actividad.Perfiles; track $index) {
+              <div class="profileWrapper">
+                <li>{{perfil}}</li>
+                <button class="inconBtn"><img src="../../assets/delete.png" class="icon" (click)="spliceProfiles($index)"></button>
+              </div>
+            }
           </ul>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Guardar Cambios</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>

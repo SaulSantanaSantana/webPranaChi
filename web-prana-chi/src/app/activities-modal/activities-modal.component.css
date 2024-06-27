@@ -14,6 +14,20 @@
     margin: 0;
 }
 
+.inconBtn{
+    border: none;
+    background-color: transparent;
+}
+
+.profileWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+    gap:5px
+}
+
 .members{
 
     align-self: flex-start;

@@ -48,6 +48,10 @@ export class UserService {
     return this.usersRef;
   }
 
+  getAllUsers(): Observable<any[]> {
+    return this.db.collection(this.dbPath).valueChanges();
+  }
+
   update(id: string, data: any): Promise<void> {
     return this.usersRef.doc(id).update(data);
   }

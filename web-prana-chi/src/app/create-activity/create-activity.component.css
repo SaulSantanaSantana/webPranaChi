@@ -1,0 +1,22 @@
+.actionbtn{
+    width: 22px;
+    height: 22px;
+    border-radius: 50px;
+    border: none;
+    background-color: #2B4256;
+    color: white;
+    margin-left: 10px;
+    font-size: small;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: baseline;
+}
+
+input{
+    font-size: 20px;
+    padding-left: 10px;
+}
