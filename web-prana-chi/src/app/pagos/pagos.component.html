@@ -6,36 +6,49 @@
     </div>
     <div class="adminview">
       <div class="filters">
-        <input type="text" placeholder="Nombre">
-        <input type="text" placeholder="Pagado">
+        <input type="text" placeholder="Nombre" [(ngModel)]="namefilter" (change)="filter()">
+        <select name="select" [(ngModel)]="marcFilter" (change)="filter()">
+          <option value="Todas" selected>Todas</option>
+          <option value="true">Pagado</option>
+          <option value="false">No Pagado</option>
+        </select>
       </div>
-      <div class="profile--subtitle">
-        <label for="profileName">Añadir Pago</label>
-        <button class="actionbtn">+</button>
-    </div>
+      @if(admin){
+        <app-add-payment></app-add-payment>
+      }
     </div>
     <hr>
     <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">Fecha</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Pagado</th>
             <th scope="col">Cliene</th>
             <th scope="col">Asunto</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Julio</td>
-            <td >
-              <div class="actions">
-              <button class="checkBrn"> </button>
-              <button class="payBtn"><img src="../../assets/delete.png" class="icon"></button>
-            </div>
-            </td>
-          </tr>
+          @for (pay of paysFiltered; track $index) {
+            <tr>
+              <th> {{convertirTimestamp(pay.Fecha)}} </th>
+              <td> {{pay.Cantidad}}€ </td>
+              <td> {{pay.Marcada ? "✔️" : "X"}} </td>
+              <td> {{pay.Usuario}} </td>
+              <td> {{pay.Concepto == "" ? "-" : pay.Concepto}} </td>
+              <td>
+                <div class="actions">
+                  <a href="https://www.youtube.com/watch?v=rXKIJHCTvMw&t=29s" target="_blank">
+                    <button class="payBtn"><img src="../../assets/pagar.png" class="icon"></button>
+                  </a>
+                @if(admin){
+                  <button class="payBtn"><img src="../../assets/delete.png" class="icon" (click)="deletePay(pay.id)"></button>
+                }
+              </div>
+              </td>
+            </tr>
+          }
         </tbody>
       </table>
 </section>

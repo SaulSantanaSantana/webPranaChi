@@ -37,7 +37,7 @@
     align-items: center;
 }
 
-input{
+input, select{
     height: 35px;
     width: 240px;
     border-width: 2px;

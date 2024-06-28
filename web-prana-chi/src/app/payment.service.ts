@@ -2,45 +2,46 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserNotificacion } from './Notificacion.model';
 import { Observable } from 'rxjs';
+import { Pay } from './pay.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NorificationsService {
-
-  private dbPath = 'Notificaciones';
+export class PaymentService {
+  private dbPath = 'Pagos';
 
   constructor(private db: AngularFirestore) { }
 
-  async createNotification(uid: string, mensaje:string, nombre:string): Promise<any> {
+  async createPayment(uid: string, concepto:string, nombre:string, cantidad:number): Promise<any> {
 
     const id = this.db.createId();
     const docRef = this.db.collection(this.dbPath).doc(id);
 
-    let notification = new UserNotificacion;
-    notification.Usuario = uid;
-    notification.uid = uid;
-    notification.Usuario = nombre;
-    notification.Mensaje = mensaje;
-    notification.id = id;
+    let payment = new Pay;
+    payment.Usuario = uid;
+    payment.Cantidad = cantidad
+    payment.uid = uid;
+    payment.Usuario = nombre;
+    payment.Concepto = concepto;
+    payment.id = id;
     
-    const data = { ...notification }; 
+    const data = { ...payment }; 
 
     await docRef.set( data, { merge: true }).then(() => {
-      alert("Notificaiocn creada con éxito")
+      alert("Pago creado con éxito")
     });
   }
 
-  getAllNotifications(): Observable<any[]> {
+  getAllPays(): Observable<any[]> {
     return this.db.collection(this.dbPath).valueChanges();
   }
 
-  deleteNotifications(id: string, ): Promise<void> {
+  deletePay(id: string, ): Promise<void> {
     return new Promise((resolve, reject) => {
       // Borra el documento de Firestore
       this.db.collection(this.dbPath).doc(id).delete()
         .then(async () => {
-          alert("Notifiacion eliminada")
+          alert("Pago eliminado")
         })
         .catch(error => {
           alert(error);
@@ -48,7 +49,7 @@ export class NorificationsService {
     });
   }
 
-  updateNotification(id: string, data: UserNotificacion): Promise<void> {
+  updatePay(id: string, data: Pay): Promise<void> {
     const docData = { ...data }; 
     return this.db.collection(this.dbPath).doc(id).update(docData);
   }

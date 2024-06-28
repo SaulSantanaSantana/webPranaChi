@@ -1,0 +1,32 @@
+<!-- Button trigger modal -->
+<div class="profile--subtitle">
+    <label for="profileName">Añadir Pago</label>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="actionbtn">+</button>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Creación Manual de pagos</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input list="usuarios" placeholder="Seleccione Usuario" class="adduser"  [(ngModel)]="usuariolSelecionado" (ngModelChange)="onChange()">
+            <datalist id="usuarios">
+              @for (usuario of usuarios; track $index) {
+                <option>{{usuario.Nombre}}: {{usuario.id}}</option>
+              }
+            </datalist>
+            <input type="text" placeholder="Introduzca la cantidad" [(ngModel)]="cantidad">
+            <textarea type="text" style="height: 100px; resize: none;" id="profileData" [(ngModel)]="Concepto" placeholder="Introduzca mensaje"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="createPayments()">Guardar pago</button>
+        </div>
+      </div>
+    </div>
+  </div>
