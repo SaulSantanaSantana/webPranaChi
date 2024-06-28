@@ -16,7 +16,6 @@ export class ActivitiesModalComponent {
   @Input() actividad: any;
 
   usuarios: Usuario[] | undefined;
-
   perfilSelecionado: string = ""
   usuariolSelecionado: string = ""
   usuariolSelecionadoObj: Usuario | undefined;

@@ -6,6 +6,8 @@ import { Usuario } from '../Usuario.model';
 import { UserService } from '../firestore.service';
 import { FormsModule } from '@angular/forms';
 import { AddProfileComponent } from '../add-profile/add-profile.component';
+import { ActivitiesService } from '../activities.service';
+import { Actividad } from '../Actividad.model';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +19,7 @@ import { AddProfileComponent } from '../add-profile/add-profile.component';
 export class ProfileComponent implements OnInit {
 
   uid = "";
+  actividades: Actividad[] = []
 
   userActual: Usuario = {
     id: "",
@@ -28,7 +31,7 @@ export class ProfileComponent implements OnInit {
     perfiles: []
   };
 
-  constructor(private auth: AngularFireAuth, private afs: UserService){}
+  constructor(private auth: AngularFireAuth, private afs: UserService, private activitiesService: ActivitiesService){}
   
   ngOnInit(): void {
     const auth = getAuth();
@@ -41,6 +44,12 @@ export class ProfileComponent implements OnInit {
           } else {
           }
         });
+
+        this.activitiesService.getAllActivities().subscribe(data => {
+          this.actividades = data;
+          this.actividades = this.actividades.filter(actividad => actividad.Usuarios?.includes(this.uid))
+        });
+
       } else {
         // User is signed out
         // ...
@@ -59,6 +68,21 @@ export class ProfileComponent implements OnInit {
     .catch((error) => {
       alert(error)
     });
+  }
+
+  getActivities(perfil: string){
+
+    let actividades = ""
+    this.actividades.filter(actividad => actividad.Perfiles?.includes(this.userActual.Nombre + ": "+perfil))
+    .forEach(actividad =>{
+      actividades = actividades + actividad.Nombre + " "
+    })
+
+    if(actividades == ""){
+      actividades = "-"
+    }
+
+    return actividades
   }
 
   removeProfile(index: number){

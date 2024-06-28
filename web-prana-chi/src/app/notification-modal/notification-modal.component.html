@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-target="#notificationModal"> <img src="../../assets/ver.png" alt="see icon" class="icon"> </button>
+<button type="button" class="btn btn-primary notificatioBtn" data-bs-toggle="modal" data-bs-toggle="modal" [attr.data-bs-target]="'#'+notification.id"> <img src="../../assets/ver.png" alt="see icon" class="icon"> </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id={{notification.id}} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

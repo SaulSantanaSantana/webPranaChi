@@ -30,6 +30,10 @@
                 </div>
             </div>
             <input type="text"  [ngModel] = "perfil" disabled>
+            <div class="activitiesWrapper">
+                <label for="profileName">Actividades:</label>
+                <p>{{ getActivities(perfil) }}</p>
+            </div>
         }
         <div class="profile--subtitle">
             <app-add-profile (profileEmiter)="receiveMessage($event)"></app-add-profile>
