@@ -39,9 +39,7 @@
               <td> {{pay.Concepto == "" ? "-" : pay.Concepto}} </td>
               <td>
                 <div class="actions">
-                  <a href="https://www.youtube.com/watch?v=rXKIJHCTvMw&t=29s" target="_blank">
-                    <button class="payBtn"><img src="../../assets/pagar.png" class="icon"></button>
-                  </a>
+                    <button class="payBtn"><img src="../../assets/pagar.png" class="icon" (click)="StripePay(pay)"></button>
                 @if(admin){
                   <button class="payBtn"><img src="../../assets/delete.png" class="icon" (click)="deletePay(pay.id)"></button>
                 }

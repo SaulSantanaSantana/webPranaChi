@@ -7,7 +7,9 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { PaymentService } from './payment.service';
 
 @Component({
   selector: 'app-root',
@@ -24,8 +26,9 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     RouterModule,
     FormsModule,
     AngularFirestoreModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PaymentService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

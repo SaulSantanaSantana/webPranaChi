@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserNotificacion } from './Notificacion.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Pay } from './pay.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { loadStripe } from '@stripe/stripe-js';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentService {
+  private readonly _url = environment.payUrl
+
   private dbPath = 'Pagos';
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore, private http: HttpClient) { }
 
   async createPayment(uid: string, concepto:string, nombre:string, cantidad:number): Promise<any> {
 
@@ -52,5 +57,17 @@ export class PaymentService {
   updatePay(id: string, data: Pay): Promise<void> {
     const docData = { ...data }; 
     return this.db.collection(this.dbPath).doc(id).update(docData);
+  }
+
+  checkoutPay(payments: Pay[]){
+    return this.http.post(this._url, {items: payments}).pipe(
+      map( async (res:any) =>{
+        console.log(res)
+        const stripe = await loadStripe(environment.stripeKey)
+        stripe?.redirectToCheckout({sessionId: res.id});
+      })
+    ).subscribe({
+      error: (err) => alert("Error con la pasarel de pago")
+    })
   }
 }

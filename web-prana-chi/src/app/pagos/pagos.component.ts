@@ -7,11 +7,12 @@ import { UserService } from '../firestore.service';
 import { PaymentService } from '../payment.service';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Timestamp } from 'firebase/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-pagos',
   standalone: true,
-  imports: [NavbarSecondaryComponent, AddPaymentComponent, FormsModule],
+  imports: [NavbarSecondaryComponent, AddPaymentComponent, FormsModule, HttpClientModule],
   templateUrl: './pagos.component.html',
   styleUrl: './pagos.component.css'
 })
@@ -74,5 +75,16 @@ export class PagosComponent {
 
   deletePay(id: any){
     this.payService.deletePay(id)
+  }
+
+  async StripePay(pago: Pay){
+    pago.Marcada = true
+    if(pago.id){
+      await this.payService.updatePay(pago.id, pago)
+
+      let pendentPays: Pay[] = []
+      pendentPays.push(pago)
+      this.payService.checkoutPay(pendentPays)
+    } 
   }
 }
