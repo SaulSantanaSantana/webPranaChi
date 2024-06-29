@@ -19,6 +19,7 @@ export class ActivitiesComponent {
 
   admin = false
   uid = ""
+  name = ""
   actividades: Actividad[] = []
 
   constructor(private activitiesService: ActivitiesService, private auth: AngularFireAuth, private afs: UserService){}
@@ -32,6 +33,7 @@ export class ActivitiesComponent {
           if (document) {
             this.admin = document.admin;
             this.uid = document.uid
+            this.name = document.Nombre
           } else {
           }
         });
@@ -59,6 +61,6 @@ export class ActivitiesComponent {
   }
 
   generateTimeTable(){
-    this.activitiesService.generarHorario(this.actividades)
+    this.activitiesService.generarHorario(this.actividades, this.name)
   }
 }

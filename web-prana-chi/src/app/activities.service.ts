@@ -56,7 +56,7 @@ export class ActivitiesService {
     return this.db.collection(this.dbPath).doc(id).update(docData);
   }
 
-  generarHorario(actividades: Actividad[]) {
+  generarHorario(actividades: Actividad[], name:string) {
     const doc = new jsPDF();
     const diasSemana = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
     const diasSemanaVer = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -82,7 +82,7 @@ export class ActivitiesService {
       }
     });
 
-    const titulo = 'Horario Semanal de Parana & Chi';
+    const titulo = 'Horario Semanal de Parana & Chi de '+ name;
   
     autoTable(doc, {
       head: [['Hora', ...diasSemanaVer]],
