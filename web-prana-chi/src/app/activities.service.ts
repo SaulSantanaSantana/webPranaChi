@@ -12,12 +12,13 @@ export class ActivitiesService {
 
   constructor(private db: AngularFirestore) { }
 
-  async createActividad(nombre: string, lugar: string, horarios: string, monitor: string): Promise<any> {
+  async createActividad(nombre: string, lugar: string, horarios: string, monitor: string, precio: number): Promise<any> {
 
     const id = this.db.createId();
     const docRef = this.db.collection(this.dbPath).doc(id);
 
     let actividad = new Actividad;
+    actividad.PrecioMes = precio;
     actividad.Nombre = nombre;
     actividad.Horario = horarios;
     actividad.Lugar = lugar;

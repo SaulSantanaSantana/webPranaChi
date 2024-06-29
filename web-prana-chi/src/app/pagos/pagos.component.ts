@@ -8,6 +8,10 @@ import { PaymentService } from '../payment.service';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Timestamp } from 'firebase/firestore';
 import { HttpClientModule } from '@angular/common/http';
+import { ActivitiesService } from '../activities.service';
+import { Actividad } from '../Actividad.model';
+import { Usuario } from '../Usuario.model';
+import { user } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-pagos',
@@ -25,7 +29,7 @@ export class PagosComponent {
   admin = false
   uid = ""
 
-  constructor( private userService: UserService, private payService: PaymentService){
+  constructor( private userService: UserService, private payService: PaymentService, private activitiesService: ActivitiesService){
   }
 
   ngOnInit(){
@@ -86,5 +90,22 @@ export class PagosComponent {
       pendentPays.push(pago)
       this.payService.checkoutPay(pendentPays)
     } 
+  }
+
+  async generateMonthPays(){
+    this.activitiesService.getAllActivities().subscribe(data => {
+      data.forEach(actividad =>{
+        actividad.Usuarios.forEach((usuarioActividadId: string) => {
+          this.userService.getUser(usuarioActividadId).subscribe(data => {
+            let usuarioActividad = data
+            let concepto = "Pago Mensual de " + actividad.Nombre
+            if(usuarioActividad.id && usuarioActividad.Nombre){
+              this.payService.createPayment(usuarioActividad.id, concepto, usuarioActividad.Nombre, actividad.PrecioMes, false)
+            }
+          })
+        })
+      })
+    });
+    alert("Generacion de pagos mensuales completada")
   }
 }

@@ -16,6 +16,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Horario</th>
             <th scope="col">Usuarios</th>
+            <th scope="col">Precio Mensual</th>
             <th scope="col">Lugar</th>
             <th scope="col">Monitor</th>
             @if(admin){
@@ -29,6 +30,7 @@
               <td>{{ actividad.Nombre }}</td>
               <td>{{ actividad.Horario }}</td>
               <td>{{ actividad.Perfiles?.toString()?.replace(",",", ") }}</td>
+              <td>{{ actividad.PrecioMes }}€</td>
               <td>{{ actividad.Lugar }}</td>
               <td>{{ actividad.Monitor }}</td>
               @if (admin) {

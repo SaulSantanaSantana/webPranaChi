@@ -17,7 +17,7 @@ export class PaymentService {
 
   constructor(private db: AngularFirestore, private http: HttpClient) { }
 
-  async createPayment(uid: string, concepto:string, nombre:string, cantidad:number): Promise<any> {
+  async createPayment(uid: string, concepto:string, nombre:string, cantidad:number, alerts:boolean): Promise<any> {
 
     const id = this.db.createId();
     const docRef = this.db.collection(this.dbPath).doc(id);
@@ -33,7 +33,9 @@ export class PaymentService {
     const data = { ...payment }; 
 
     await docRef.set( data, { merge: true }).then(() => {
-      alert("Pago creado con éxito")
+      if(alerts){
+        alert("Pago creado con éxito")
+      }
     });
   }
 

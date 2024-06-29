@@ -39,7 +39,7 @@ export class AddPaymentComponent {
 
   async createPayments(){
     if(this.usuariolSelecionadoObj?.id && this.usuariolSelecionadoObj?.Nombre){
-      await this.payService.createPayment(this.usuariolSelecionadoObj?.id, this.Concepto, this.usuariolSelecionadoObj?.Nombre, this.cantidad)
+      await this.payService.createPayment(this.usuariolSelecionadoObj?.id, this.Concepto, this.usuariolSelecionadoObj?.Nombre, this.cantidad, true)
       this.usuariolSelecionado = ""
       this.Concepto = ""
       this.cantidad = 0

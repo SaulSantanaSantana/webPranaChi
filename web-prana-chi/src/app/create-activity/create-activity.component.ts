@@ -15,11 +15,12 @@ export class CreateActivityComponent {
   lugar = ""
   horarios = ""
   monitor = ""
+  precio = 0.0
 
   constructor( private activitiesService: ActivitiesService ){}
 
   async createActivity(){
-    await this.activitiesService.createActividad(this.nombre, this.lugar, this.horarios, this.monitor)
+    await this.activitiesService.createActividad(this.nombre, this.lugar, this.horarios, this.monitor, this.precio)
     this.nombre = ""
     this.lugar = ""
     this.horarios = ""

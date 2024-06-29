@@ -14,7 +14,10 @@
         </select>
       </div>
       @if(admin){
-        <app-add-payment></app-add-payment>
+        <div class="adminBtnWrapper">
+          <app-add-payment></app-add-payment>
+        <button class="saveChanges" (click)="generateMonthPays()">Generar pagos del mes</button>
+        </div>
       }
     </div>
     <hr>
