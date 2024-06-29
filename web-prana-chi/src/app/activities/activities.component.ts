@@ -57,4 +57,8 @@ export class ActivitiesComponent {
       this.activitiesService.deleteActivity(actividad.id)
     } 
   }
+
+  generateTimeTable(){
+    this.activitiesService.generarHorario(this.actividades)
+  }
 }
