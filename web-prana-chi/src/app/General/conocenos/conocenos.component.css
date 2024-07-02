@@ -17,7 +17,8 @@
 }
 
 .Horairos{
-    height: 80vh;
+    max-height: 80vh;
+    max-width: 100%;
     width: auto;
 }
 
@@ -45,4 +46,34 @@
     margin-right: 5vw;
     margin-left: 5vw;
     width: 55vw;
+}
+
+@media (max-width: 768px) {
+    .section1{
+        height: auto;
+    }
+    .section3{
+        flex-direction: column;
+        height: 100%;
+        padding: 10px;
+    }
+    .judoImg2{
+        align-self: center;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        max-height: 45vh;
+        margin: 0px !important;
+    }
+    .title{
+        font-size: 45px;
+        text-align: center;
+    }
+    .descripcion2{
+        margin: 10px;
+        width: 100%;
+    }
+    .text{
+        font-size: 18px;
+    }
 }

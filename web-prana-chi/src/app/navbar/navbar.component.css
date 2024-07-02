@@ -146,15 +146,16 @@
     }
 
     .navbar{
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .logoText{
-        margin-left: 4vh;
+        margin-left: 0px;
     }
 
     .burger{
-        display: flex;
+      margin-right: 0px;
+      display: flex;
     }
 
     .menu-button-container {
