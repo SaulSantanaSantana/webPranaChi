@@ -3,12 +3,12 @@ import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondar
 import { AddPaymentComponent } from '../add-payment/add-payment.component';
 import { FormsModule } from '@angular/forms';
 import { Pay } from '../../pay.model';
-import { UserService } from '../../firestore.service';
-import { PaymentService } from '../../payment.service';
+import { UserService } from '../../services/firestore.service';
+import { PaymentService } from '../../services/payment.service';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Timestamp } from 'firebase/firestore';
 import { HttpClientModule } from '@angular/common/http';
-import { ActivitiesService } from '../../activities.service';
+import { ActivitiesService } from '../../services/activities.service';
 import { Actividad } from '../../Actividad.model';
 import { Usuario } from '../../Usuario.model';
 import { user } from '@angular/fire/auth';

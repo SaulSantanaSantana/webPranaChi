@@ -4,8 +4,8 @@ import { UploadDocumentComponent } from '../upload-document/upload-document.comp
 import { Documento } from '../../Documento.model';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { UserService } from '../../firestore.service';
-import { DocumentService } from '../../document.service';
+import { UserService } from '../../services/firestore.service';
+import { DocumentService } from '../../services/document.service';
 
 @Component({
   selector: 'app-documentos',

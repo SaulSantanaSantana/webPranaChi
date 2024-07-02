@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Documento } from './Documento.model';
+import { Documento } from '../Documento.model';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { finalize } from 'rxjs/operators';

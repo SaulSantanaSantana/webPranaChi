@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-navbar-secondary',
   standalone: true,

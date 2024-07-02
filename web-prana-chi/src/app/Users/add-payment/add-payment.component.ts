@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../Usuario.model';
-import { UserService } from '../../firestore.service';
-import { PaymentService } from '../../payment.service';
+import { UserService } from '../../services/firestore.service';
+import { PaymentService } from '../../services/payment.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { PaymentService } from './payment.service';
+import { PaymentService } from './services/payment.service';
 
 @Component({
   selector: 'app-root',

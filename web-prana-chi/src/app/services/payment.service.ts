@@ -1,10 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { UserNotificacion } from './Notificacion.model';
 import { Observable, map } from 'rxjs';
-import { Pay } from './pay.model';
+import { Pay } from '../pay.model';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { loadStripe } from '@stripe/stripe-js';
 
 @Injectable({
