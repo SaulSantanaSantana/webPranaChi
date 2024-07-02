@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Actividad } from '../../Actividad.model';
+import { Actividad } from '../../models/Actividad.model';
 import { UserService } from '../../services/firestore.service';
-import { Usuario } from '../../Usuario.model';
+import { Usuario } from '../../models/Usuario.model';
 import { FormsModule } from '@angular/forms';
 import { ActivitiesService } from '../../services/activities.service';
 @Component({

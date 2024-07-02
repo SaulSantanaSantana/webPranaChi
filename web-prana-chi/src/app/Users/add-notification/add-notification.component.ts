@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Usuario } from '../../Usuario.model';
+import { Usuario } from '../../models/Usuario.model';
 import { UserService } from '../../services/firestore.service';
 import { ActivitiesService } from '../../services/activities.service';
 import { FormsModule } from '@angular/forms';

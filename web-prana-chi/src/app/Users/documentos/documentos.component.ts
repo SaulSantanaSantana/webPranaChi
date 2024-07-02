@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondary.component';
 import { UploadDocumentComponent } from '../upload-document/upload-document.component';
-import { Documento } from '../../Documento.model';
+import { Documento } from '../../models/Documento.model';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../../services/firestore.service';

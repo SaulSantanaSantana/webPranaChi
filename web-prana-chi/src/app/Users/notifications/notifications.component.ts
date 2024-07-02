@@ -5,7 +5,7 @@ import { AddNotificationComponent } from '../add-notification/add-notification.c
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../../services/firestore.service';
 import { NorificationsService } from '../../services/norifications.service';
-import { UserNotificacion } from '../../Notificacion.model';
+import { UserNotificacion } from '../../models/Notificacion.model';
 import { Timestamp } from 'firebase/firestore';
 import { FormsModule } from '@angular/forms';
 

@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable, map } from 'rxjs';
-import { Pay } from '../pay.model';
+import { Pay } from '../models/pay.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { loadStripe } from '@stripe/stripe-js';

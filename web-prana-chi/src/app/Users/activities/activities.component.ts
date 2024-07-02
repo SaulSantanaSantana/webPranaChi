@@ -6,7 +6,7 @@ import { ActivitiesService } from '../../services/activities.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../../services/firestore.service';
-import { Actividad } from '../../Actividad.model';
+import { Actividad } from '../../models/Actividad.model';
 
 @Component({
   selector: 'app-activities',

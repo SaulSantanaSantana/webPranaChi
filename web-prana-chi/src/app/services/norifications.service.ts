@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { UserNotificacion } from '../Notificacion.model';
+import { UserNotificacion } from '../models/Notificacion.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
