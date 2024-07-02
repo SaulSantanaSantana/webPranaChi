@@ -2,11 +2,11 @@ import {Routes} from '@angular/router';
 import { LandingComponent } from './General/landing/landing.component';
 import { ActividadesComponent } from './General/actividades/actividades.component';
 import { ConocenosComponent } from './General/conocenos/conocenos.component';
-import { ProfileComponent } from './profile/profile.component';
-import { DocumentosComponent } from './documentos/documentos.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { PagosComponent } from './pagos/pagos.component';
-import { ActivitiesComponent } from './activities/activities.component';
+import { ProfileComponent } from './Users/profile/profile.component';
+import { DocumentosComponent } from './Users/documentos/documentos.component';
+import { NotificationsComponent } from './Users/notifications/notifications.component';
+import { PagosComponent } from './Users/pagos/pagos.component';
+import { ActivitiesComponent } from './Users/activities/activities.component';
 
 export const routes: Routes = [
     {path: 'oferta-actividades', component: ActividadesComponent},

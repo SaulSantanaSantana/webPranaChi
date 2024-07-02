@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Timestamp } from 'firebase/firestore';
-import { NorificationsService } from '../norifications.service';
+import { NorificationsService } from '../../norifications.service';
 
 @Component({
   selector: 'app-notification-modal',

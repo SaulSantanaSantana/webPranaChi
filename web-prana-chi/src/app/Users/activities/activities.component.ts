@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivitiesModalComponent } from '../activities-modal/activities-modal.component';
-import { NavbarSecondaryComponent } from '../navbar-secondary/navbar-secondary.component';
+import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondary.component';
 import { CreateActivityComponent } from '../create-activity/create-activity.component';
-import { ActivitiesService } from '../activities.service';
+import { ActivitiesService } from '../../activities.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { UserService } from '../firestore.service';
-import { Actividad } from '../Actividad.model';
+import { UserService } from '../../firestore.service';
+import { Actividad } from '../../Actividad.model';
 
 @Component({
   selector: 'app-activities',

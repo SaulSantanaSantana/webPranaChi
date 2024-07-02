@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivitiesService } from '../activities.service';
+import { ActivitiesService } from '../../activities.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

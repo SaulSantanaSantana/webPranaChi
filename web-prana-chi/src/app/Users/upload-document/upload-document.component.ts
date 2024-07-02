@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DocumentService } from '../document.service';
+import { DocumentService } from '../../document.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

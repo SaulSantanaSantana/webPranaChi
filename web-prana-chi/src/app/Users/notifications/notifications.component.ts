@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NotificationModalComponent } from '../notification-modal/notification-modal.component';
-import { NavbarSecondaryComponent } from '../navbar-secondary/navbar-secondary.component';
+import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondary.component';
 import { AddNotificationComponent } from '../add-notification/add-notification.component';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { UserService } from '../firestore.service';
-import { NorificationsService } from '../norifications.service';
-import { UserNotificacion } from '../Notificacion.model';
+import { UserService } from '../../firestore.service';
+import { NorificationsService } from '../../norifications.service';
+import { UserNotificacion } from '../../Notificacion.model';
 import { Timestamp } from 'firebase/firestore';
 import { FormsModule } from '@angular/forms';
 

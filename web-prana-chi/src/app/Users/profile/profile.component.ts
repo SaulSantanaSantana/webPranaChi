@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarSecondaryComponent } from '../navbar-secondary/navbar-secondary.component';
+import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondary.component';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { Usuario } from '../Usuario.model';
-import { UserService } from '../firestore.service';
+import { Usuario } from '../../Usuario.model';
+import { UserService } from '../../firestore.service';
 import { FormsModule } from '@angular/forms';
 import { AddProfileComponent } from '../add-profile/add-profile.component';
-import { ActivitiesService } from '../activities.service';
-import { Actividad } from '../Actividad.model';
+import { ActivitiesService } from '../../activities.service';
+import { Actividad } from '../../Actividad.model';
 
 @Component({
   selector: 'app-profile',

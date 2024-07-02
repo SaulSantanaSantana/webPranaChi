@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { Actividad } from '../Actividad.model';
-import { UserService } from '../firestore.service';
-import { Usuario } from '../Usuario.model';
+import { Actividad } from '../../Actividad.model';
+import { UserService } from '../../firestore.service';
+import { Usuario } from '../../Usuario.model';
 import { FormsModule } from '@angular/forms';
-import { ActivitiesService } from '../activities.service';
+import { ActivitiesService } from '../../activities.service';
 @Component({
   selector: 'app-activities-modal',
   standalone: true,

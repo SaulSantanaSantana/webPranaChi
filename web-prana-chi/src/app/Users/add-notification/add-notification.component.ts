@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Usuario } from '../Usuario.model';
-import { UserService } from '../firestore.service';
-import { ActivitiesService } from '../activities.service';
+import { Usuario } from '../../Usuario.model';
+import { UserService } from '../../firestore.service';
+import { ActivitiesService } from '../../activities.service';
 import { FormsModule } from '@angular/forms';
-import { NorificationsService } from '../norifications.service';
+import { NorificationsService } from '../../norifications.service';
 
 @Component({
   selector: 'app-add-notification',
