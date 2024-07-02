@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DocumentServiceService } from '../document-service.service';
+import { DocumentService } from '../document.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -20,7 +20,7 @@ export class UploadDocumentComponent {
     this.documento = event.target.files[0];
   }
 
-  constructor(private docService: DocumentServiceService) { }
+  constructor(private docService: DocumentService) { }
 
   async uploadDocument() {
     if (this.nombre == ""){

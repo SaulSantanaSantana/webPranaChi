@@ -5,7 +5,7 @@ import { Documento } from '../Documento.model';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../firestore.service';
-import { DocumentServiceService } from '../document-service.service';
+import { DocumentService } from '../document.service';
 
 @Component({
   selector: 'app-documentos',
@@ -19,7 +19,7 @@ export class DocumentosComponent {
   admin: boolean = false
   documentos: Documento[] = []
 
-  constructor(private documentService: DocumentServiceService, private auth: AngularFireAuth, private afs: UserService){}
+  constructor(private documentService: DocumentService, private auth: AngularFireAuth, private afs: UserService){}
 
   ngOnInit() {
 

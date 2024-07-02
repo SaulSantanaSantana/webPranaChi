@@ -8,7 +8,7 @@ import { Observable, firstValueFrom } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DocumentServiceService {
+export class DocumentService {
 
   private dbPath = 'Documentos';
 
