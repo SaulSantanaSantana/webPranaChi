@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Timestamp } from 'firebase/firestore';
-import { NorificationsService } from '../../services/norifications.service';
+import { NotificationsService } from '../../services/notifications.service';
 
 @Component({
   selector: 'app-notification-modal',
@@ -14,7 +14,7 @@ export class NotificationModalComponent {
   @Input() notification: any;
   buttonEnable = true
 
-  constructor(private notifications: NorificationsService){}
+  constructor(private notifications: NotificationsService){}
 
   convertirTimestamp(timestamp: Timestamp): string {
     const date = timestamp.toDate();

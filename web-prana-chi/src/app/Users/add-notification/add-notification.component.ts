@@ -3,7 +3,7 @@ import { Usuario } from '../../models/Usuario.model';
 import { UserService } from '../../services/firestore.service';
 import { ActivitiesService } from '../../services/activities.service';
 import { FormsModule } from '@angular/forms';
-import { NorificationsService } from '../../services/norifications.service';
+import { NotificationsService } from '../../services/notifications.service';
 
 @Component({
   selector: 'app-add-notification',
@@ -20,7 +20,7 @@ export class AddNotificationComponent {
   usuariolSelecionado: string = ""
   usuariolSelecionadoObj: Usuario | undefined;
 
-  constructor( private userService: UserService, private notificationService: NorificationsService){
+  constructor( private userService: UserService, private notificationService: NotificationsService){
   }
 
   ngOnInit(){

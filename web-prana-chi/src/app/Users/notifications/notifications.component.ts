@@ -4,7 +4,7 @@ import { NavbarSecondaryComponent } from '../../navbar-secondary/navbar-secondar
 import { AddNotificationComponent } from '../add-notification/add-notification.component';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { UserService } from '../../services/firestore.service';
-import { NorificationsService } from '../../services/norifications.service';
+import { NotificationsService } from '../../services/notifications.service';
 import { UserNotificacion } from '../../models/Notificacion.model';
 import { Timestamp } from 'firebase/firestore';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ export class NotificationsComponent {
   admin = false
   uid = ""
 
-  constructor( private userService: UserService, private notificationService: NorificationsService){
+  constructor( private userService: UserService, private notificationService: NotificationsService){
   }
 
   ngOnInit(){

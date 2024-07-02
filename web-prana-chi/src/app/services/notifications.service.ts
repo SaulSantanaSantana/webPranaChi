@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class NorificationsService {
+export class NotificationsService {
 
   private dbPath = 'Notificaciones';
 
