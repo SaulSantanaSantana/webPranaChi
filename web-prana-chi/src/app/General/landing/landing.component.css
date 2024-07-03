@@ -9,12 +9,12 @@
 }
 
 h1{
-    font-size: 65px;
+    font-size: 55px;
     font-weight: bold;
 }
 
 p{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .section2{
@@ -28,7 +28,7 @@ p{
 
 .title{
     font-weight: 400;
-    font-size: 70px;
+    font-size: 55px;
 }
 
 b{
@@ -127,7 +127,7 @@ b{
 }
 
 .cardText{
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .cardName{
@@ -153,7 +153,7 @@ b{
     margin-left: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .section2, .section3{
         height: auto;
         width: auto;

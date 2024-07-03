@@ -48,7 +48,7 @@
     width: 55vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .section1{
         height: auto;
     }

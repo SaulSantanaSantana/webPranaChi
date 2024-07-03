@@ -37,7 +37,7 @@ p{
 }
 
 h5{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -71,7 +71,7 @@ b{
     margin-right: 1vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .section2, .section3{
         height: auto;
         width: auto;
