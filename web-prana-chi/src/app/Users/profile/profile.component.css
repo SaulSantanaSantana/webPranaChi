@@ -109,7 +109,7 @@ input{
     }
 }
 
-@media (max-width: 6550px){
+@media (max-width: 650px){
     .profile{
         height: 150vh;
     }
