@@ -307,3 +307,11 @@ h6 span{
 .sesionBtn:hover{
   background-color: #39658b
 }
+
+@media only screen and (max-width: 880px){
+  .sesionBtn{
+    font-size: 12px;
+    width: 120px;
+    height: 35px;
+}
+}
