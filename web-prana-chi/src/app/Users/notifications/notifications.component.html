@@ -35,11 +35,18 @@
               <th>{{ convertirTimestamp(notification.Fecha) }}</th>
               <td>{{ notification.Mensaje }}</td>
               <td>{{ notification.Usuario }}</td>
-              <td>{{ notification.Marcada ? "✔️" : "X"}}</td>
+              @if(notification.Usuario == "General"){
+                <td> - </td>
+              }
+              @if(notification.Usuario != "General"){
+                <td>{{ notification.Marcada ? "✔️" : "X"}}</td>
+              }
               <td >
                 <div class="actions">
                 <button class="inconBtn"><app-notification-modal [notification]="notification"></app-notification-modal></button>
-                <button class="inconBtn"><img src="../../assets/delete.png" class="icon" (click)="deleteNotification(notification.id)"></button>
+                @if(this.admin){
+                  <button class="inconBtn"><img src="../../assets/delete.png" class="icon" (click)="deleteNotification(notification.id)"></button>
+                }
               </div>
               </td>
             </tr>
