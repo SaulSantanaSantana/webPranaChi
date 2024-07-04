@@ -63,7 +63,6 @@ export class PaymentService {
   checkoutPay(payments: Pay[]){
     return this.http.post(this._url, {items: payments}).pipe(
       map( async (res:any) =>{
-        console.log(res)
         const stripe = await loadStripe(environment.stripeKey)
         stripe?.redirectToCheckout({sessionId: res.id});
       })
